@@ -1,0 +1,8 @@
+{
+  "@@locale": "de",
+  "appTitle": "Apothekenfinder",
+  "greeting": "Hallo {userName}",
+  "itemCount": "{count, plural, =1{Ein Artikel}}",
+  "legacyBanner": "Dieses Banner gibt es nicht mehr",
+  "close": "Close"
+}

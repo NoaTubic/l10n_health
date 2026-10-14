@@ -1,0 +1,18 @@
+include: package:lints/recommended.yaml
+
+linter:
+  rules:
+    - always_declare_return_types
+    - always_use_package_imports
+    - avoid_print
+    - directives_ordering
+    - eol_at_end_of_file
+    - prefer_final_locals
+    - prefer_single_quotes
+    - require_trailing_commas
+    - unawaited_futures
+
+analyzer:
+  errors:
+    unused_import: error
+    dead_code: error

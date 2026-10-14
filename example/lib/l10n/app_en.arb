@@ -1,0 +1,13 @@
+{
+  "@@locale": "en",
+  "appTitle": "Pharmacy finder",
+  "greeting": "Hello {name}",
+  "@greeting": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "itemCount": "{count, plural, =1{One item} other{{count} items}}",
+  "legacyBanner": "This banner was removed long ago",
+  "close": "Close"
+}

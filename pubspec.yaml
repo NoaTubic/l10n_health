@@ -1,0 +1,32 @@
+name: l10n_health
+description: >-
+  Health check for the translation layer of Dart and Flutter apps. Finds
+  unused and missing ARB keys, placeholder mismatches, duplicate and
+  untranslated values, hardcoded UI strings and invisible Unicode, with a
+  safe prune mode and HTML, Markdown and JSON reports.
+version: 0.1.0
+repository: https://github.com/NoaTubic/l10n_health
+issue_tracker: https://github.com/NoaTubic/l10n_health/issues
+
+topics:
+  - l10n
+  - i18n
+  - localization
+  - arb
+  - static-analysis
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  analyzer: ">=8.0.0 <15.0.0"
+  glob: ^2.1.2
+  path: ^1.9.0
+  yaml: ^3.1.2
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.25.0
+
+executables:
+  l10n_health:

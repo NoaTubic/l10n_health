@@ -1,0 +1,4 @@
+# The example has no dev dependencies, so it does not include the
+# package lints.
+analyzer:
+  exclude: [build/**]
