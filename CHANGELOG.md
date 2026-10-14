@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- README: replaced the comparison with other packages by a short
+  performance note.
+
 ## 0.1.0
 
 First release.

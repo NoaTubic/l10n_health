@@ -4,7 +4,7 @@ description: >-
   unused and missing ARB keys, placeholder mismatches, duplicate and
   untranslated values, hardcoded UI strings and invisible Unicode, with a
   safe prune mode and HTML, Markdown and JSON reports.
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/NoaTubic/l10n_health
 issue_tracker: https://github.com/NoaTubic/l10n_health/issues
 
