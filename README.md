@@ -265,49 +265,13 @@ Future<void> main() async {
 }
 ```
 
-## Compared with other packages
+## Performance
 
-| | l10n_health | [sweeper] | [translations_cleaner] | [rebellion] | [plural_lint] | [fcheck] | [hardcoded_strings_lint] |
-|---|---|---|---|---|---|---|---|
-| Unused keys | ✓ | ✓ | ✓ | | | ✓ | |
-| Safe prune (dry run, verified, atomic) | ✓ | ✓ | deletes directly | | | | |
-| Missing translations | ✓ | | | ✓ | | ✓ | |
-| Placeholder mismatches across locales | ✓ | | | partial | | | |
-| ICU syntax | ✓ | | | | | | |
-| CLDR plural forms | ✓ | | | ✓ | ✓ | | |
-| Duplicate keys | ✓ | | | ✓ | | ✓ | |
-| Untranslated / duplicate values | ✓ | | | | | | |
-| Hardcoded strings | ✓ | | | | | ✓ | ✓ (IDE) |
-| Invisible Unicode | ✓ | | | | | | |
-| Sort | ✓ | ✓ | ✓ | ✓ | | | |
-| gen_l10n and flutter_intl | ✓ | gen_l10n only | ✓ | ARB files | ARB files | `l10n.yaml` | n/a |
-| HTML / Markdown / GitLab / GitHub reports | ✓ | | | | | | |
-
-Measured on one production Flutter app (2,931 Dart files, 2,439 keys, two
-locales, 12-core Mac, warm runs):
-
-| Tool | What it checks | Time | Unused keys found |
-|---|---|---|---|
-| l10n_health (`dart compile exe`) | all checks | **0.26 s** | 365 |
-| translations_cleaner 0.2.1 | unused keys | 1.4 s | 363 (misses 2 whose names are used on unrelated objects) |
-| sweeper 0.5.0 | unused keys | 23 s | 360 (template keys only) |
-
-l10n_health's 365 is sweeper's 360, which come from full resolved
-analysis, plus five keys that exist only in a translation file. Speed
-comes from parse-only analysis spread across all cores, and from only ever
-building source text for expressions that could be a localizations
-accessor.
-
-The IDE plugin of hardcoded_strings_lint is a different kind of tool: it
-flags strings as you type. l10n_health is a CLI and CI check over the
-whole translation layer.
-
-[sweeper]: https://pub.dev/packages/sweeper
-[translations_cleaner]: https://pub.dev/packages/translations_cleaner
-[rebellion]: https://pub.dev/packages/rebellion
-[plural_lint]: https://pub.dev/packages/plural_lint
-[fcheck]: https://pub.dev/packages/fcheck
-[hardcoded_strings_lint]: https://pub.dev/packages/hardcoded_strings_lint
+On a production Flutter app with 2,931 Dart files and 2,439 keys in two
+locales, a full run of every check takes about a quarter of a second
+(compiled with `dart compile exe`, 12-core Mac). Files are parsed without
+resolving types, so no `pub get` is needed, and the work is spread across
+all cores.
 
 ## License
 
