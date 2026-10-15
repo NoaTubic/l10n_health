@@ -1,5 +1,7 @@
 # l10n_health
 
+> Read the article: [A health check for your Flutter translations](https://medium.com/@noatubic/a-health-check-for-your-flutter-translations-936fe2e35917)
+
 A health check for the translation layer of Dart and Flutter apps.
 
 `l10n_health` reads your `.arb` files and your Dart code together, and
